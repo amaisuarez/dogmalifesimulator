@@ -1,4 +1,3 @@
-# -*- coding: utf-8 -*-
 """
 Pruebas unitarias básicas del simulador del dogma central.
 Ejecutar con:  python -m pytest tests/  (o  python -m unittest tests/test_simulador.py)
