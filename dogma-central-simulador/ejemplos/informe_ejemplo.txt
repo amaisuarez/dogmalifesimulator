@@ -1,0 +1,88 @@
+
+==============================================================================
+                  MOLÉCULA DE ADN DE PARTIDA (doble hélice)                   
+==============================================================================
+Hebra A 5'-CGTACGTACG ATGGCTAAGC GTTTCTGGTA ATTTTAAACC C-3'
+Hebra B 3'-GCATGCATGC TACCGATTCG CAAAGACCAT TAAAATTTGG G-5'   (complementaria y antiparalela)
+
+==============================================================================
+                     1. REPLICACIÓN DEL ADN  (ADN -> ADN)                     
+==============================================================================
+* La helicasa reconoce el origen de replicación y rompe los puentes de hidrógeno entre las bases, abriendo la doble hélice y generando una horquilla de replicación.
+* Las proteínas de unión a ADN monocatenario (SSB) estabilizan las hebras separadas para impedir que vuelvan a aparearse, mientras la topoisomerasa alivia la tensión torsional por delante de la horquilla.
+* PRIMASA: sintetiza un único cebador de ARN complementario al inicio de la Hebra A (molde), permitiendo a la ADN polimerasa III comenzar la síntesis.
+* ADN POLIMERASA III sintetiza la HEBRA LÍDER de forma continua en dirección 5'->3', leyendo la Hebra A molde en dirección 3'->5' y aplicando la complementariedad A-T / G-C.
+* Como la Hebra B se lee en el mismo sentido que avanza la horquilla, no puede copiarse de forma continua: la ADN polimerasa III sintetiza la HEBRA RETRASADA en fragmentos cortos y discontinuos (FRAGMENTOS DE OKAZAKI), cada uno iniciado por un cebador de ARN independiente.
+*   Fragmento de Okazaki #1: primasa coloca cebador de ARN -> ADN polimerasa III extiende 8 nt de ADN sobre el molde (Hebra B).
+*   Fragmento de Okazaki #2: primasa coloca cebador de ARN -> ADN polimerasa III extiende 8 nt de ADN sobre el molde (Hebra B).
+*   Fragmento de Okazaki #3: primasa coloca cebador de ARN -> ADN polimerasa III extiende 8 nt de ADN sobre el molde (Hebra B).
+*   Fragmento de Okazaki #4: primasa coloca cebador de ARN -> ADN polimerasa III extiende 8 nt de ADN sobre el molde (Hebra B).
+*   Fragmento de Okazaki #5: primasa coloca cebador de ARN -> ADN polimerasa III extiende 8 nt de ADN sobre el molde (Hebra B).
+*   Fragmento de Okazaki #6: primasa coloca cebador de ARN -> ADN polimerasa III extiende 1 nt de ADN sobre el molde (Hebra B).
+* RNasa H / ADN polimerasa I retiran los cebadores de ARN y los sustituyen por ADN; a continuación, la ADN LIGASA sella los huecos entre fragmentos de Okazaki consecutivos, formando una hebra retrasada continua.
+* Resultado: dos moléculas de ADN hijas, cada una formada por una hebra parental original y una hebra recién sintetizada (replicación SEMICONSERVATIVA), ambas idénticas a la molécula de ADN original.
+
+--- Hebra líder (síntesis continua) ------------------------------------------
+Molde   (Hebra A) 5'-CGTACGTACG ATGGCTAAGC GTTTCTGGTA ATTTTAAACC C-3'
+Nueva   (líder)   3'-GGGTTTAAAA TTACCAGAAA CGCTTAGCCA TCGTACGTAC G-5'
+
+--- Hebra retrasada (fragmentos de Okazaki) ----------------------------------
+Molde (Hebra B, leída 3'->5' desde el extremo de la horquilla):
+  Fragmento  1: molde=GCATGCAT   cebador=5'-CGU-3' (ARN) -> ADN nuevo=CGTACGTA
+  Fragmento  2: molde=GCTACCGA   cebador=5'-CGA-3' (ARN) -> ADN nuevo=CGATGGCT
+  Fragmento  3: molde=TTCGCAAA   cebador=5'-AAG-3' (ARN) -> ADN nuevo=AAGCGTTT
+  Fragmento  4: molde=GACCATTA   cebador=5'-CUG-3' (ARN) -> ADN nuevo=CTGGTAAT
+  Fragmento  5: molde=AAATTTGG   cebador=5'-UUU-3' (ARN) -> ADN nuevo=TTTAAACC
+  Fragmento  6: molde=G          cebador=5'-C-3' (ARN)  -> ADN nuevo=C
+Hebra retrasada final (fragmentos ya unidos por la ligasa):
+  5'-CGTACGTACG ATGGCTAAGC GTTTCTGGTA ATTTTAAACC C-3'
+
+--- Moléculas de ADN hijas (semiconservativas) -------------------------------
+Dúplex 1: hebra parental A + hebra líder nueva
+  5'-CGTACGTACG ATGGCTAAGC GTTTCTGGTA ATTTTAAACC C-3'
+  3'-GGGTTTAAAA TTACCAGAAA CGCTTAGCCA TCGTACGTAC G-5'
+Dúplex 2: hebra parental B + hebra retrasada nueva
+  3'-GCATGCATGC TACCGATTCG CAAAGACCAT TAAAATTTGG G-5'
+  5'-CGTACGTACG ATGGCTAAGC GTTTCTGGTA ATTTTAAACC C-3'
+
+==============================================================================
+                       2. TRANSCRIPCIÓN  (ADN -> ARNm)                        
+==============================================================================
+* La ARN POLIMERASA reconoce una región promotora en el ADN y se une a la doble hélice, provocando su apertura local.
+* Se selecciona como HEBRA MOLDE la hebra B (se lee en dirección 3'->5'); la hebra complementaria actúa como HEBRA CODIFICANTE (su secuencia es idéntica al ARNm resultante, sustituyendo T por U).
+* La ARN polimerasa sintetiza el ARNm en dirección 5'->3', aplicando complementariedad de bases sobre el molde (A(molde)->U, T(molde)->A, G(molde)->C, C(molde)->G).
+* Al alcanzar una secuencia terminadora, la ARN polimerasa se libera del ADN junto con el transcrito de ARNm recién sintetizado.
+
+--- Complementariedad molde -> ARNm ------------------------------------------
+Hebra molde       3'-GCATGCATGC TACCGATTCG CAAAGACCAT TAAAATTTGG G-5'
+ARNm sintetizado  5'-CGUACGUACG AUGGCUAAGC GUUUCUGGUA AUUUUAAACC C-3'
+(Hebra codificante, para referencia: 5'-CGTACGTACG ATGGCTAAGC GTTTCTGGTA ATTTTAAACC C-3')
+
+==============================================================================
+                      3. TRADUCCIÓN  (ARNm -> proteína)                       
+==============================================================================
+* El RIBOSOMA (subunidad pequeña) se une al ARNm y localiza el primer codón de inicio AUG en la posición 11, que fija el marco de lectura.
+* Un ARN de transferencia iniciador (ARNt-Met) reconoce el codón AUG por complementariedad con su anticodón; se ensambla la subunidad ribosómica grande, formando el ribosoma completo.
+* Codón AUG -> ARNt con anticodón complementario aporta Met (M); la peptidil-transferasa del ribosoma forma el enlace peptídico con la cadena en crecimiento.
+* Codón GCU -> ARNt con anticodón complementario aporta Ala (A); la peptidil-transferasa del ribosoma forma el enlace peptídico con la cadena en crecimiento.
+* Codón AAG -> ARNt con anticodón complementario aporta Lys (K); la peptidil-transferasa del ribosoma forma el enlace peptídico con la cadena en crecimiento.
+* Codón CGU -> ARNt con anticodón complementario aporta Arg (R); la peptidil-transferasa del ribosoma forma el enlace peptídico con la cadena en crecimiento.
+* Codón UUC -> ARNt con anticodón complementario aporta Phe (F); la peptidil-transferasa del ribosoma forma el enlace peptídico con la cadena en crecimiento.
+* Codón UGG -> ARNt con anticodón complementario aporta Trp (W); la peptidil-transferasa del ribosoma forma el enlace peptídico con la cadena en crecimiento.
+* Codón de PARADA UAA reconocido por un factor de liberación (no existe ARNt complementario): el ribosoma libera la cadena polipeptídica y se disocia del ARNm.
+
+--- Lectura de codones -------------------------------------------------------
+Codones leídos: AUG | GCU | AAG | CGU | UUC | UGG | UAA
+
+--- Cadena polipeptídica resultante ------------------------------------------
+Secuencia (3 letras): Met-Ala-Lys-Arg-Phe-Trp-STOP(UAA)
+Secuencia (1 letra):  MAKRFW
+Longitud: 6 aminoácidos
+
+##############################################################################
+                  RESUMEN DEL FLUJO DE INFORMACIÓN GENÉTICA                   
+##############################################################################
+ADN (hebra codificante) : 5'-CGTACGTACGATGGCTAAGCGTTTCTGGTAATTTTAAACCC-3'
+        (replicación)   -> 2 moléculas de ADN hijas idénticas
+ARNm  (transcripción)   : 5'-CGUACGUACGAUGGCUAAGCGUUUCUGGUAAUUUUAAACCC-3'
+Proteína (traducción)  : MAKRFW  (Met-Ala-Lys-Arg-Phe-Trp)
