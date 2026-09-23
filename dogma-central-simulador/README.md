@@ -211,37 +211,11 @@ siguientes decisiones:
 - La traducción se detiene en el **primer** codón de parada
   encontrado a partir del **primer** `AUG` del ARNm.
 
-## Pruebas
 
-El proyecto incluye pruebas unitarias que verifican la
-complementariedad de bases, la reconstrucción correcta de las hebras
-tras la replicación (incluyendo los fragmentos de Okazaki), la
-transcripción y la traducción:
-
-```bash
-python -m unittest discover tests -v
 ```
-
-## Cómo subir este proyecto a GitHub
-
-Este proyecto ya incluye un repositorio Git local con un primer
-commit. Para publicarlo en tu cuenta de GitHub:
-
-1. Crea un repositorio vacío en GitHub (sin README, sin licencia,
-   sin `.gitignore`, para evitar conflictos), por ejemplo
-   `dogma-central-simulador`.
-2. En este proyecto, añade tu repositorio remoto y sube el código:
-
-   ```bash
-   git remote add origin https://github.com/<tu-usuario>/dogma-central-simulador.git
-   git branch -M main
-   git push -u origin main
-   ```
-
-3. Comprueba en GitHub que todos los ficheros (incluida la carpeta
-   `ejemplos/` con la imagen) se han subido correctamente.
-
 ## Autoría
 
 Práctica 1 de Bioinformática — Simulación del dogma central de la
 biología molecular.
+
+Amai Suárez Navarro
