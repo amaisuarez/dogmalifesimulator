@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Simulador del dogma central</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+  <header class="cabecera">
+    <h1>Dogma central</h1>
+    <p>Sigue una secuencia de ADN mientras se copia, se transcribe a ARN mensajero y se traduce a proteína.</p>
+  </header>
+
+  <main>
+    <section class="entrada" aria-labelledby="t-entrada">
+      <h2 id="t-entrada" class="oculto">Secuencia de partida</h2>
+      <label for="secuencia" class="etiqueta">Hebra superior del ADN, de 5' a 3'</label>
+      <textarea id="secuencia" rows="3" spellcheck="false" autocomplete="off"
+        placeholder="Pega una secuencia (A, T, C, G) o elige un ejemplo"></textarea>
+      <div class="entrada-pie">
+        <span id="contador" class="contador">0 / {{ longitud_maxima }} nt</span>
+        <div class="ejemplos" id="ejemplos"></div>
+        <button type="button" id="btn-aleatoria" class="btn-texto">Gen aleatorio</button>
+      </div>
+
+      <div class="parametros">
+        <label>Fragmento de Okazaki
+          <span class="control-num"><input type="number" id="tam-fragmento" min="3" max="40" value="8"> nt</span>
+        </label>
+        <label>Cebador de ARN
+          <span class="control-num"><input type="number" id="tam-cebador" min="1" max="10" value="3"> nt</span>
+        </label>
+        <fieldset>
+          <legend>Hebra molde para transcribir</legend>
+          <label><input type="radio" name="molde" value="inferior" checked> Inferior (3'→5')</label>
+          <label><input type="radio" name="molde" value="superior"> Superior (5'→3')</label>
+        </fieldset>
+        <button type="button" id="btn-simular" class="btn-principal">Simular</button>
+      </div>
+      <p id="error" class="error" role="alert" hidden></p>
+    </section>
+
+    <section id="resultado" hidden>
+      <nav class="flujo" aria-label="Etapas">
+        <button type="button" class="etapa-btn" data-etapa="replicacion" aria-selected="true">
+          <span class="num">1</span>
+          <span><strong>Replicación</strong><small>ADN → ADN</small></span>
+        </button>
+        <button type="button" class="etapa-btn" data-etapa="transcripcion" aria-selected="false">
+          <span class="num">2</span>
+          <span><strong>Transcripción</strong><small>ADN → ARN</small></span>
+        </button>
+        <button type="button" class="etapa-btn" data-etapa="traduccion" aria-selected="false">
+          <span class="num">3</span>
+          <span><strong>Traducción</strong><small>ARN → proteína</small></span>
+        </button>
+      </nav>
+
+      <div class="escenario">
+        <div class="reproductor" id="reproductor">
+          <button type="button" data-accion="primero" aria-label="Primer paso">⏮</button>
+          <button type="button" data-accion="anterior" aria-label="Paso anterior">◀</button>
+          <button type="button" data-accion="reproducir" class="reproducir" aria-label="Reproducir">▶</button>
+          <button type="button" data-accion="siguiente" aria-label="Paso siguiente">▶︎|</button>
+          <button type="button" data-accion="ultimo" aria-label="Último paso">⏭</button>
+          <input type="range" id="barra" min="0" max="0" value="0" aria-label="Paso">
+          <span id="paso-num" class="paso-num">1 / 1</span>
+          <select id="velocidad" aria-label="Velocidad">
+            <option value="2200">Lenta</option>
+            <option value="1300" selected>Normal</option>
+            <option value="600">Rápida</option>
+          </select>
+        </div>
+
+        <div class="narracion" aria-live="polite">
+          <h3 id="paso-titulo"></h3>
+          <p id="paso-texto"></p>
+        </div>
+
+        <div class="lienzo" id="lienzo" tabindex="0" aria-label="Visualización de la etapa"></div>
+        <div id="leyenda" class="leyenda"></div>
+        <div id="extra"></div>
+      </div>
+
+      <section class="resumen" aria-labelledby="t-resumen">
+        <h2 id="t-resumen">De la secuencia a la proteína</h2>
+        <div id="resumen"></div>
+      </section>
+    </section>
+  </main>
+
+  <footer class="pie">
+    Práctica 1 de Bioinformática (ULPGC). Longitudes de fragmentos y cebadores reducidas para que quepan en pantalla.
+  </footer>
+
+  <script src="{{ url_for('static', filename='app.js') }}"></script>
+</body>
+</html>
