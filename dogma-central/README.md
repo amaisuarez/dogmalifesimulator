@@ -10,18 +10,15 @@ Una aplicación web en Python que parte de una molécula de ADN y muestra, paso 
 
 ## Puesta en marcha
 
-Hace falta Python 3.10 o superior.
 
 ```bash
 git clone https://github.com/<usuario>/dogma-central.git
 cd dogma-central
-python -m venv .venv
-source .venv/bin/activate        # En Windows: .venv\Scripts\activate
 pip install -r requirements.txt
 python app.py
 ```
 
-Abre <http://127.0.0.1:5000> en el navegador.
+Abrir <http://127.0.0.1:5000> en el navegador.
 
 También hay una versión en texto para la terminal:
 
@@ -31,7 +28,7 @@ python -m dogma --aleatoria --pasos        # gen aleatorio, con la explicación 
 python -m dogma SECUENCIA --molde superior --fragmento 6 --cebador 2
 ```
 
-Para ejecutar las pruebas:
+Para ejecutar pruebas:
 
 ```bash
 pip install -r requirements-dev.txt
