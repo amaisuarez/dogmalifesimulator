@@ -6,7 +6,7 @@ Una aplicación web en Python que parte de una molécula de ADN y muestra, paso 
 
 **ADN → ADN → ARN → proteína**
 
-![Replicación: horquilla con cadena líder y fragmentos de Okazaki](docs/replicacion.png)
+![Replicación: horquilla con cadena líder y fragmentos de Okazaki](dogma-central/docs/replicacion.png)
 
 ## Puesta en marcha
 
@@ -73,13 +73,13 @@ En pantalla, las hebras parentales van en negro y las nuevas con cada base color
 
 ### 2. Transcripción (ADN → ARN)
 
-![Transcripción](docs/transcripcion.png)
+![Transcripción](dogma-central/docs/transcripcion.png)
 
 La transcripción se hace sobre la molécula hija 1, para que la información pase de verdad de una etapa a la siguiente. La ARN polimerasa lee la hebra molde 3'→5' y sintetiza el ARNm 5'→3', con las reglas A→U, T→A, C→G y G→C. La visualización muestra la burbuja de transcripción con el híbrido ARN-ADN, el ARN que se va separando del molde y la doble hélice que se cierra detrás. Se puede elegir cualquiera de las dos hebras como molde; si es la superior, la polimerasa avanza de derecha a izquierda.
 
 ### 3. Traducción (ARN → proteína)
 
-![Traducción](docs/traduccion.png)
+![Traducción](dogma-central/docs/traduccion.png)
 
 El ribosoma recorre el ARNm desde el extremo 5' hasta el primer AUG, lo que fija el marco de lectura. En cada paso se ven:
 
